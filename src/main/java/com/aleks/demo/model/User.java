@@ -1,12 +1,12 @@
 package com.aleks.demo.model;
+
+import java.math.BigInteger;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.math.BigInteger;
 
 @Entity
 @Getter
@@ -15,10 +15,12 @@ import java.math.BigInteger;
 @NoArgsConstructor
 public class User {
 
-    @Id
-    private Integer id;
-    private String userName;
-    private BigInteger accountNumber;
-    private Integer balance;
+  @Id
+  //should be long
+  private Integer id;
+  private String userName;
+  //Long
+  private BigInteger accountNumber;
+  private Integer balance;
 }
 
