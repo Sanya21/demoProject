@@ -15,44 +15,41 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-  //name according convention
-  final UserService UserService;
+  final UserService userService;
 
   public UserController(com.aleks.demo.service.UserService userService) {
-    UserService = userService;
+    this.userService = userService;
   }
 
   //GET localhost:8080/users/1
   @GetMapping("/users/{id}")
-  public User findOne(@PathVariable /*should be long*/ Integer id) {
-    return UserService.findById(id);
-
+  public User findOne(@PathVariable Long id) {
+    return userService.findById(id);
   }
 
   //GET localhost:8080/users
   @GetMapping("/users")
   public Iterable<User> findAllUsers() {
-    return UserService.findAll();
+    return userService.findAll();
   }
 
-  //write request example
-  //todo read best practices and write correct mapping
-  @PostMapping("")
+  //POST localhost:8080/users
+  @PostMapping("/users")
   @ResponseStatus(HttpStatus.CREATED)
   public User create(@RequestBody User user) {
-    return UserService.save(user);
+    return userService.save(user);
   }
 
-  //todo read best practices and write correct mapping
-  @DeleteMapping("/")
-  public void delete(@PathVariable Integer id) {
-    UserService.deleteById(id);
+  //POST localhost:8080/users/1
+  @DeleteMapping("/users/{id}")
+  public void delete(@PathVariable Long id) {
+    userService.deleteById(id);
   }
 
-  //todo read best practices and write correct mapping
-  @PutMapping("/")
-  public User updateUser(@RequestBody User user, @PathVariable Integer id) {
-    UserService.findById(id);
-    return UserService.save(user);
+  //POST localhost:8080/users/1
+  @PutMapping("/users/{id}")
+  public User updateUser( @PathVariable Long id,@RequestBody User user) {
+      userService.findById(id);
+      return userService.save(user);
   }
 }

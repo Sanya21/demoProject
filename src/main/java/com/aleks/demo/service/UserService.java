@@ -19,14 +19,14 @@ public class UserService {
   }
 
   //use Optional.get() for unwrap optional
-  public User findById(Integer id) {
-    final Optional<User> byId = userRepository.findById((long) id);
+  public User findById(Long id) {
+    final Optional<User> byId = userRepository.findById(id);
     User user = byId.get();
     return user;
   }
 
-  public User deleteById(Integer id) {
-    return userRepository.deleteById(id);
+  public void deleteById(Long id) {
+    userRepository.deleteById(id);
   }
 
   public Iterable<User> findAll() {

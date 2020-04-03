@@ -14,10 +14,4 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    //delete this method
-    @GetMapping("/hello-world")
-    public String myFirstController() {
-        return "Hello World!";
-    }
-
 }

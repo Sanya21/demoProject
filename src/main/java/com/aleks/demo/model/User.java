@@ -16,11 +16,9 @@ import lombok.Setter;
 public class User {
 
   @Id
-  //should be long
-  private Integer id;
+  private Long id;
   private String userName;
-  //Long
-  private BigInteger accountNumber;
+  private Long accountNumber;
   private Integer balance;
 }
 
