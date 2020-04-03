@@ -36,6 +36,17 @@
             <artifactId>h2</artifactId>
             <version>1.4.200</version>
         </dependency>
+        <!-- Spring MVC support -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
